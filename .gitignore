@@ -42,3 +42,7 @@ yarn.lock
 
 # ignore package-json.lock
 package-json.lock
+
+# All temporary ignored files
+tmp/*
+!tmp/.gitkeep

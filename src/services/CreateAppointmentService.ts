@@ -3,6 +3,7 @@ import { getCustomRepository } from 'typeorm';
 
 import Appointment from '../models/Appointment';
 import AppointmentRepository from '../repositories/AppointmentsRepository';
+import AppError from '../errors/AppError';
 /**
  * [x] Recebimento das informações
  * [x] Tratativa de erros e exceções
@@ -11,7 +12,7 @@ import AppointmentRepository from '../repositories/AppointmentsRepository';
 
 // DRY: Don't Repeat Yourself
 interface RequestDTO {
-  provider: string;
+  provider_id: string;
   date: Date;
 }
 
@@ -33,7 +34,7 @@ class CreateAppointmentService {
     );
 
     if (findAppointmentInSameDate) {
-      throw Error('This Appointment is already booked.');
+      throw new AppError('This Appointment is already booked.');
     }
 
     const appointment = appointmentsRepository.create({
