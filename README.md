@@ -26,3 +26,10 @@ ignore-watch: Ignora a o build de alguma pasta
   "database": "gostack_gobarber"
 }
 ```
+
+
+
+### Padrões - SOLID
+
+1) DDD
+2) Liskov Substitution Principle
