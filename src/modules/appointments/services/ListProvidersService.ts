@@ -1,4 +1,3 @@
-import AppError from '@shared/errors/AppError';
 import { injectable, inject } from 'tsyringe';
 
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
